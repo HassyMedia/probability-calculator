@@ -28,3 +28,8 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
         if all(drawn_balls.count(color) >= count for color, count in expected_balls.items()):
             success_count += 1  # Increment the success count if the experiment meets expectations.
     return success_count / num_experiments  # Return the probability based on the number of successful experiments.
+
+# Example usage
+hat = Hat(black=6, red=4, green=3)
+probability = experiment(hat=hat, expected_balls={"red":2, "green":1}, num_balls_drawn=5, num_experiments=2000)
+print(probability)
